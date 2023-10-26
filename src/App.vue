@@ -48,7 +48,13 @@ import Todo from './components/Todo.vue';
         v-model="todoText"
       >
     </div>
-    <Todo v-for="todo in todos" :key="todo.id" :todo="todo" @toggle-checkbox="toggleCheck"/>
+    <Todo 
+      v-for="todo in todos" 
+      :key="todo.id" 
+      :todo="todo" 
+      @toggle-checkbox="toggleCheck"
+      @click-delete="deleteTodo"
+    />
   </div>
 </template>
 

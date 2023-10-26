@@ -12,6 +12,9 @@
           id:this.todo.id,
           checked:e.target.checked
         })
+      },
+      clickDelete(){
+        this.$emit('click-delete',this.todo.id);
       }
     }
   }
@@ -25,8 +28,13 @@
       :id="'input'+todo.id"
       @change="toggleCheckbox"
     >
-    <label class="form-check-label" :for="`input${todo.id}`">
+    <label 
+      class="form-check-label" 
+      :for="`input${todo.id}`"
+      :style="todo.checked ? 'text-decoration:line-through':''"
+    >
      {{todo.text}}
     </label>
+    <button type="button" class="ms-2 btn btn-danger btn-sm" @click="clickDelete">delete</button>
   </div>
 </template>
