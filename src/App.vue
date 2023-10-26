@@ -28,6 +28,14 @@ import Todo from './components/Todo.vue';
         const index = this.todos.findIndex(todo => todo.id === id);
         this.todos[index].checked = checked;
         console.log(this.todos);
+      },
+      deleteTodo(id){
+        if(window.confirm('정말 삭제할까요')){
+          const index = this.todos.findIndex(todo => todo.id === id);
+          this.todos.splice(index,1);
+        } else{
+          alert('최소되었습니다.')
+        }
       }
     }
   }

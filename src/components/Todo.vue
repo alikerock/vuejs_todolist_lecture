@@ -35,6 +35,10 @@
     >
      {{todo.text}}
     </label>
-    <button type="button" class="ms-2 btn btn-danger btn-sm" @click="clickDelete">delete</button>
+    <button 
+      type="button" 
+      class="ms-2 btn btn-danger btn-sm" 
+      @click="clickDelete"
+    >delete</button>
   </div>
 </template>
